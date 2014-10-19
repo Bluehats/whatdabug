@@ -10,8 +10,9 @@ query.find({
   success: function(bugs)
   {
     var random = Math.floor(Math.random()*bugs.length);
-    var bug = bugs[random];
-    document.getElementsByTagName('tbody')[0].innerHTML = bug.get("code");
+    currentBug = bugs[random];
+    document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
+    lineClickHandlers();
   },
   error: function(error)
   {

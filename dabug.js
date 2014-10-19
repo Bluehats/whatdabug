@@ -1,9 +1,9 @@
 var streak = 0;
 var time = 10;
 var loop = "";
+var currentBug;
 
 window.onload = function(){
-  lineClickHandlers();
   init_game();
 };
 
@@ -30,7 +30,13 @@ function lineClickHandlers()
 }
 
 function checkAnswer(rowNumber){
-  console.log(rowNumber);
+  bugLines = currentBug.get('bug_lines').split(',');
+  if (bugLines.indexOf(rowNumber + '') >= 0 ) {
+    next_round();
+  }else{
+    looseGame();
+  }
+
 }
 
 function gameloop(){
@@ -54,6 +60,9 @@ function updateDOMStreak(){
 
 function looseGame(){
   window.clearInterval(loop);
+  time = 0;
+  updateDOMTime();
+  alert('perdiste jajajaja');
 }
 
 function next_round(){
