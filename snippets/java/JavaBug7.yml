@@ -1,0 +1,2 @@
+explanation: Java strings are immutable and replace returns a new string, which is discarded instead of being returned.
+bug_lines: '5'
