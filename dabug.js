@@ -105,3 +105,21 @@ function next_round(){
   rounds.splice(random, 1);
   lineClickHandlers();
 }
+
+function send_score(){
+  var HighScore = Parse.Object.extend("HighScore");
+  var newScore = new HighScore();
+  newScore.set("username", document.getElementById('scorername').value);
+  newScore.set("score", streak);
+
+  newScore.save(null, {
+    success: function(newScore)
+    {
+      console.log("saved!!!");
+    },
+    error: function(newScore, error)
+    {
+      console.log("error saving :(");
+    }
+  });
+}
