@@ -61,7 +61,7 @@ function gameloop(){
     looseGame();
   }
   var rows = document.getElementById("wrong");
-  rows.removeAttribute("id"); 
+  rows.removeAttribute("id");
 }
 
 function updateDOMTime(){
@@ -88,18 +88,18 @@ function drawLoose(){
       g = d.getElementsByTagName('body')[0],
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      
+
   var overlay = document.getElementById("gameover");
   var message = document.getElementById("goexplanation");
-  
+
   overlay.setAttribute("style", "display: block");
   message.innerHTML = "Lines " + currentBug.get("bug_lines") + ": " + currentBug.get("explanation");
-  
+
   window.setTimeout(function ()
    {
        document.getElementById('scorername').focus();
    }, 0);
-  
+
 }
 
 function next_round(){
