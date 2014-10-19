@@ -1,0 +1,2 @@
+explanation: 'Inside the second if there is a variable called "number" which was not declared. '
+bug_lines: '12'

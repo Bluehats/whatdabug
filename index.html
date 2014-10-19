@@ -9,113 +9,32 @@
 <!--[if gt IE 8]><!-->
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
 <!--<![endif]-->
+  <link rel="stylesheet" href="style.css" media="screen" charset="utf-8">
   <script src="dabug.js"></script>
   <script src="https://www.parsecdn.com/js/parse-1.3.0.min.js"></script>
   <script src="parse.js"></script>
-  <style>
-  html, button, input, select, textarea,
-  .pure-g [class *= "pure-u"] {
-      /* Set your content font stack here: */
-      font-family: monospace;
-  }
-  body{
-    background: none repeat scroll 0% 0% #000;
-    color: #0F0;
-    font-family: monospace;
-    font-size: 1.4em;
-  }
-  #whatdalogo{
-    font-size: 1.5em;
-    color: white;
-  }
-  #whatdatime{
-    font-size: 1.5em;
-    color: #0F0;
-    text-align:right;
-  }
-  #whatdatimep{
-    padding-right: 15px;
-    
-  }
-  #whatdastreak{
-    font-size: 1.5em;
-    color: #0F0;
-    text-align:right;
-  }
-  #whatdastreakp{
-    padding-right: 15px;
-  }
-  #gameover{
-    opacity:    0.8; 
-    background: #0F0; 
-    color:      black;
-    width:      100%;
-    height:     100%; 
-    z-index:    10;
-    top:        80px; 
-    left:       0; 
-    position:   fixed; 
-    text-align:center;
-    display: none;
-  }
-  #gameover #gomessage{
-    font-size:  4em;
-    font-weight: bold;
-  }
-  #gameover #goexplanation{
-    font-size:  1em;
-    font-weight: bold;
-    font-style: italic;
-    width: 60%;
-    margin: -3em auto 20px;
-  }
-  #gameover .scorer input{
-    border: 0;
-    background: #000;
-    color: #0F0;
-    font-size: 1.8em;
-    padding: .5em;
-    text-align: center;
-  }
-  .header{
-    padding-top: 10px;
-    padding-left: 10px;
-  }
-  .code{
-    padding-left: 10px;
-  }
-  tr{
-    display: block;
-    cursor: crosshair;
-  }
-  table, tbody, tr, td{
-    width: 100%;
-  }
-  td{
-    font-size: 1.5em;
-    height: 1em;
-  }
-  tr:hover{
-    background: #0F0;
-    color: black;
-  }
-  #wrong{
-    background: red;
-    color: white;
-  }
-  #wrong:hover{
-    background: red;
-    color: white;
-  }
-  </style>
 </head>
 <body>
   <div class="pure-g header">
+    <div id="instructions" class="pure-u-1">
+      <p class="message">INSTRUCTIONS</p>
+      <p class="explanation">
+        WhatdaBug? Click the line where the bug is.
+        For every bug you catch you get 10 more seconds, every miss is 5 seconds less.
+      </p>
+      <a href="#" onclick="init_game();remove_instructions();" class="pure-button">START</a>
+    </div>
     <div id="gameover" class="pure-u-1">
-      <p id="gomessage">GAME OVER</p>
-      <p id="goexplanation">operator '&' is invalid on type float</p>
+      <p class="message">GAME OVER</p>
+      <p id="goexplanation" class="explanation">operator '&' is invalid on type float</p>
       <div class="scorer">
         <input id="scorername" type="text" name="scorer" value="">
+      </div>
+      <br/>
+      <div class="gobuttons">
+        <a href="#" onclick="restart();" class="pure-button">RESTART</a>
+        or
+        <a href="#" onclick="send_score();" class="pure-button">SUBMIT</a>
       </div>
     </div>
   </div>

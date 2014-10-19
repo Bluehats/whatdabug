@@ -5,7 +5,10 @@ var currentBug;
 var rounds;
 
 window.onload = function(){
-  init_game();
+  if(window.location.search.match(/restart=true/) !== null){
+    remove_instructions();
+    init_game();
+  }
 };
 
 function init_game(){
@@ -14,8 +17,11 @@ function init_game(){
   loop = window.setInterval(gameloop, 1000);
 }
 
-function lineClickHandlers()
-{
+function restart(){
+  window.location.search += '&restart=true';
+}
+
+function lineClickHandlers(){
   var rows = document.getElementsByTagName("tr");
   for(var i = 0; i < rows.length; i++)
   {
@@ -29,13 +35,17 @@ function lineClickHandlers()
   }
 }
 
-function fix()
-{
+function remove_instructions(){
+  var instructions = document.getElementById('instructions');
+  instructions.setAttribute("style", "display: none");
+}
+
+function fix(){
     var el = this;
     var par = el.parentNode;
     var next = el.nextSibling;
     par.removeChild(el);
-    setTimeout(function() {par.insertBefore(el, next);}, 0)
+    setTimeout(function() {par.insertBefore(el, next);}, 0);
 }
 
 function checkAnswer(rowNumber){
@@ -61,7 +71,7 @@ function gameloop(){
     looseGame();
   }
   var rows = document.getElementById("wrong");
-  rows.removeAttribute("id"); 
+  rows.removeAttribute("id");
 }
 
 function updateDOMTime(){
@@ -82,24 +92,17 @@ function looseGame(){
 }
 
 function drawLoose(){
-  var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth,
-      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-      
   var overlay = document.getElementById("gameover");
   var message = document.getElementById("goexplanation");
-  
+
   overlay.setAttribute("style", "display: block");
   message.innerHTML = "Lines " + currentBug.get("bug_lines") + ": " + currentBug.get("explanation");
-  
+
   window.setTimeout(function ()
    {
        document.getElementById('scorername').focus();
    }, 0);
-  
+
 }
 
 function next_round(){
@@ -112,4 +115,23 @@ function next_round(){
   document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
   rounds.splice(random, 1);
   lineClickHandlers();
+}
+
+function send_score(){
+  var HighScore = Parse.Object.extend("HighScore");
+  var newScore = new HighScore();
+  newScore.set("username", document.getElementById('scorername').value);
+  newScore.set("score", streak);
+
+  newScore.save(null, {
+    success: function(newScore)
+    {
+      console.log("saved!!!");
+      restart();
+    },
+    error: function(newScore, error)
+    {
+      console.log("error saving :(");
+    }
+  });
 }
