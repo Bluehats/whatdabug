@@ -10,8 +10,7 @@ function init_game(){
   loop = window.setInterval(gameloop, 1000);
 }
 
-function lineClickHandlers()
-{
+function lineClickHandlers(){
   var rows = document.getElementsByTagName("tr");
   for(var i = 0; i < rows.length; i++)
   {
@@ -30,13 +29,12 @@ function remove_instructions(){
   instructions.setAttribute("style", "display: none");
 }
 
-function fix()
-{
+function fix(){
     var el = this;
     var par = el.parentNode;
     var next = el.nextSibling;
     par.removeChild(el);
-    setTimeout(function() {par.insertBefore(el, next);}, 0)
+    setTimeout(function() {par.insertBefore(el, next);}, 0);
 }
 
 function checkAnswer(rowNumber){
@@ -83,13 +81,6 @@ function looseGame(){
 }
 
 function drawLoose(){
-  var w = window,
-      d = document,
-      e = d.documentElement,
-      g = d.getElementsByTagName('body')[0],
-      x = w.innerWidth || e.clientWidth || g.clientWidth,
-      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
-
   var overlay = document.getElementById("gameover");
   var message = document.getElementById("goexplanation");
 
