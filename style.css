@@ -1,0 +1,94 @@
+html, button, input, select, textarea,
+.pure-g [class *= "pure-u"] {
+    /* Set your content font stack here: */
+    font-family: monospace;
+}
+body{
+  background: none repeat scroll 0% 0% #000;
+  color: #0F0;
+  font-family: monospace;
+  font-size: 1.4em;
+}
+#whatdalogo{
+  font-size: 1.5em;
+  color: white;
+}
+#whatdatime{
+  font-size: 1.5em;
+  color: #0F0;
+  text-align:right;
+}
+#whatdatimep{
+  padding-right: 15px;
+
+}
+#whatdastreak{
+  font-size: 1.5em;
+  color: #0F0;
+  text-align:right;
+}
+#whatdastreakp{
+  padding-right: 15px;
+}
+#gameover{
+  opacity:    0.8;
+  background: #0F0;
+  color:      black;
+  width:      100%;
+  height:     100%;
+  z-index:    10;
+  top:        80px;
+  left:       0;
+  position:   fixed;
+  text-align:center;
+  display: none;
+}
+#gameover #gomessage{
+  font-size:  4em;
+  font-weight: bold;
+}
+#gameover #goexplanation{
+  font-size:  1em;
+  font-weight: bold;
+  font-style: italic;
+  width: 60%;
+  margin: -3em auto 20px;
+}
+#gameover .scorer input{
+  border: 0;
+  background: #000;
+  color: #0F0;
+  font-size: 1.8em;
+  padding: .5em;
+  text-align: center;
+}
+.header{
+  padding-top: 10px;
+  padding-left: 10px;
+}
+.code{
+  padding-left: 10px;
+}
+tr{
+  display: block;
+  cursor: crosshair;
+}
+table, tbody, tr, td{
+  width: 100%;
+}
+td{
+  font-size: 1.5em;
+  height: 1em;
+}
+tr:hover{
+  background: #0F0;
+  color: black;
+}
+#wrong{
+  background: red;
+  color: white;
+}
+#wrong:hover{
+  background: red;
+  color: white;
+}
