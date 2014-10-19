@@ -31,12 +31,14 @@ function lineClickHandlers()
 
 function checkAnswer(rowNumber){
   bugLines = currentBug.get('bug_lines').split(',');
+  var rows = document.getElementsByTagName("tr");
   if (bugLines.indexOf(rowNumber + '') >= 0 ) {
     next_round();
     time += 10;
     streak += 1;
     updateDOMStreak();
   }else{
+    rows[rowNumber-1].setAttribute("id", "wrong");
     time -= 5;
   }
 
@@ -49,6 +51,8 @@ function gameloop(){
   if(time<=0){
     looseGame();
   }
+  var rows = document.getElementById("wrong");
+  rows.removeAttribute("id"); 
 }
 
 function updateDOMTime(){
@@ -58,7 +62,7 @@ function updateDOMTime(){
 
 function updateDOMStreak(){
   var streakdiv = document.getElementById("whatdastreakp");
-  streakdiv.innerHTML = "Streak: " + streak;
+  streakdiv.innerHTML = "Score: " + streak;
 }
 
 function looseGame(){
