@@ -1,13 +1,11 @@
 #include <iostream>
 using namespace std;
 
-int main()
-{
+int main(){
     int x;
     cin >> x;
 
-    switch (x)
-    {
+    switch (x){
     case 1:
         x += 1;
 

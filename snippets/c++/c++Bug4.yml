@@ -1,2 +1,2 @@
 explanation: Wrong operator for comparing two strings. "=" is setting the value of string2 to string1. In order to compare strings, use "=="
-bug_lines: '8'
+bug_lines: '7'
