@@ -1,8 +1,8 @@
 #include <iostream>
 
 int main(){
-  char a;
-  int b;
+    char a;
+    int b;
 
-  return a;
+    return a;
 }
