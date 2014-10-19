@@ -33,8 +33,9 @@ function checkAnswer(rowNumber){
   bugLines = currentBug.get('bug_lines').split(',');
   if (bugLines.indexOf(rowNumber + '') >= 0 ) {
     next_round();
+    time += 10;
   }else{
-    looseGame();
+    time -= 5;
   }
 
 }
@@ -43,7 +44,7 @@ function gameloop(){
   time--;
   updateDOMTime(); // We redraw the time
   updateDOMStreak(); // We redraw the streak
-  if(time===0){
+  if(time<=0){
     looseGame();
   }
 }
