@@ -1,2 +1,2 @@
-explanation: "ofstream myfile" cannot be used. The '#include <fstream>' directive is missing
+explanation: '"ofstream myfile" cannot be used. The "#include <fstream>" directive is missing'
 bug_lines: '5'
