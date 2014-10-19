@@ -1,0 +1,2 @@
+explanation: 'Since currmin was never initialized, it could easily start out as the minimum value. Some compilers spot no-initialization errors.'
+bug_lines: '4'

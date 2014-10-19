@@ -1,0 +1,2 @@
+explanation: 'the variable 'x' must be declared outside the loop Do'
+bug_lines: '10'

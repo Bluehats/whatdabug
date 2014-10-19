@@ -1,0 +1,2 @@
+explanation: 'Calling f the fuction "displaySum" is made with 2 parameters when 3 are needed.'
+bug_lines: '13'
