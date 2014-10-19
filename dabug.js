@@ -2,6 +2,7 @@ var streak = 0;
 var time = 10;
 var loop = "";
 var currentBug;
+var rounds;
 
 window.onload = function(){
   init_game();
@@ -11,7 +12,6 @@ function init_game(){
   streak = 0;
   time = 10;
   loop = window.setInterval(gameloop, 1000);
-  next_round();
 }
 
 function lineClickHandlers()
@@ -66,10 +66,13 @@ function looseGame(){
 }
 
 function next_round(){
-  var codediv = document.getElementById("code");
-
-  // var round = dummy_parse();
-
-  // codediv.innerHTML = round.code;
-
+  var random = Math.floor(Math.random()*rounds.length);
+  currentBug = rounds[random];
+  if (rounds.length === 0){
+    alert('You have finished all bugs for this language, please contribute more at github.com/bluehats/whatdabug');
+    location.reload();
+  }
+  document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
+  rounds.splice(random, 1);
+  lineClickHandlers();
 }

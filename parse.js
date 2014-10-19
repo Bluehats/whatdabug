@@ -9,10 +9,8 @@ query.equalTo("language", "c++");
 query.find({
   success: function(bugs)
   {
-    var random = Math.floor(Math.random()*bugs.length);
-    currentBug = bugs[random];
-    document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
-    lineClickHandlers();
+    rounds = bugs;
+    next_round();
   },
   error: function(error)
   {
