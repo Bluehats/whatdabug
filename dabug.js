@@ -21,12 +21,21 @@ function lineClickHandlers()
   {
     (function(i) {
       var thisRow = rows[i];
-
+      thisRow.setAttribute("ontouched", "this.onclick=fix");
       thisRow.addEventListener('click', function(){
         checkAnswer(i+1);
       });
     })(i);
   }
+}
+
+function fix()
+{
+    var el = this;
+    var par = el.parentNode;
+    var next = el.nextSibling;
+    par.removeChild(el);
+    setTimeout(function() {par.insertBefore(el, next);}, 0)
 }
 
 function checkAnswer(rowNumber){
