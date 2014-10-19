@@ -19,7 +19,7 @@ function init_game(){
 }
 
 function restart(){
-  window.location.search += '&restart=true';
+  window.location.search = '&restart=true';
 }
 
 function lineClickHandlers(){
