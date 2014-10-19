@@ -18,8 +18,10 @@
   <div class="pure-g header">
     <div id="instructions" class="pure-u-1">
       <p class="message">INSTRUCTIONS</p>
-      <p class="explanation">WhatdaBug? Click the line where the bug is.</p>
-      <p class="explanation">For every bug you catch you get 10 more seconds, every miss is 5 seconds less.</p>
+      <p class="explanation">
+        WhatdaBug? Click the line where the bug is.
+        For every bug you catch you get 10 more seconds, every miss is 5 seconds less.
+      </p>
       <a href="#" onclick="init_game();remove_instructions();" class="pure-button">START</a>
     </div>
     <div id="gameover" class="pure-u-1">
@@ -30,8 +32,9 @@
       </div>
       <br/>
       <div class="gobuttons">
-        <a href="#" onclick="send_score();" class="pure-button">SUBMIT</a>
         <a href="#" onclick="init_game();" class="pure-button">RESTART</a>
+        or
+        <a href="#" onclick="send_score();" class="pure-button">SUBMIT</a>
       </div>
     </div>
   </div>
