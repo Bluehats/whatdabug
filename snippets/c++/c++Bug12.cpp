@@ -14,7 +14,7 @@ int main()
 string message(int x){
   string msg1 = "Hello, world";
   string msg2 = "Bye, world";
-  
+
   if(x==1)
     msg1 += "!";
     return msg1;

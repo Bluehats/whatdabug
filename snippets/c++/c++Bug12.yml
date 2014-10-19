@@ -1,2 +1,2 @@
 explanation: The "message" function will always return msg1. It has unreachable code.
-bug_lines: '17'
+bug_lines: '20'
