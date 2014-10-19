@@ -52,12 +52,12 @@ function gameloop(){
 }
 
 function updateDOMTime(){
-  var timediv = document.getElementById("whatdatime");
+  var timediv = document.getElementById("whatdatimep");
   timediv.innerHTML = "Time: " + time;
 }
 
 function updateDOMStreak(){
-  var streakdiv = document.getElementById("whatdastreak");
+  var streakdiv = document.getElementById("whatdastreakp");
   streakdiv.innerHTML = "Streak: " + streak;
 }
 
@@ -65,14 +65,25 @@ function looseGame(){
   window.clearInterval(loop);
   time = 0;
   updateDOMTime();
-  alert('perdiste jajajaja');
+  drawLoose();
+}
+
+function drawLoose(){
+  var w = window,
+      d = document,
+      e = d.documentElement,
+      g = d.getElementsByTagName('body')[0],
+      x = w.innerWidth || e.clientWidth || g.clientWidth,
+      y = w.innerHeight|| e.clientHeight|| g.clientHeight;
+      
+  document.getElementById("gameover").setAttribute("style", "display: block; padding-top: " + (y/3));
 }
 
 function next_round(){
   var random = Math.floor(Math.random()*rounds.length);
   currentBug = rounds[random];
   if (rounds.length === 0){
-    alert('You have finished all bugs for this language, please contribute more at github.com/bluehats/whatdabug');
+    //alert('You have finished all bugs for this language, please contribute more at github.com/bluehats/whatdabug');
     location.reload();
   }
   document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
