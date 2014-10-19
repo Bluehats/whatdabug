@@ -76,7 +76,17 @@ function drawLoose(){
       x = w.innerWidth || e.clientWidth || g.clientWidth,
       y = w.innerHeight|| e.clientHeight|| g.clientHeight;
       
-  document.getElementById("gameover").setAttribute("style", "display: block; padding-top: " + (y/3));
+  var overlay = document.getElementById("gameover");
+  var message = document.getElementById("goexplanation");
+  
+  overlay.setAttribute("style", "display: block");
+  message.innerHTML = currentBug.get("explanation");
+  
+  window.setTimeout(function ()
+   {
+       document.getElementById('scorername').focus();
+   }, 0);
+  
 }
 
 function next_round(){

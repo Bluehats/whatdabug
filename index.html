@@ -49,16 +49,32 @@
     opacity:    0.8; 
     background: #0F0; 
     color:      black;
-    font-size:  4em;
-    font-weight: bold;
     width:      100%;
     height:     100%; 
     z-index:    10;
-    top:        1em; 
+    top:        80px; 
     left:       0; 
     position:   fixed; 
     text-align:center;
     display: none;
+  }
+  #gameover #gomessage{
+    font-size:  4em;
+    font-weight: bold;
+  }
+  #gameover #goexplanation{
+    font-size:  1em;
+    font-weight: bold;
+    font-style: italic;
+    width: 60%;
+    margin: -3em auto 20px;
+  }
+  #gameover .scorer input{
+    border: 0;
+    background: #000;
+    color: #0F0;
+    font-size: 1.8em;
+    padding: .5em;
   }
   .header{
     padding-top: 10px;
@@ -87,7 +103,11 @@
 <body>
   <div class="pure-g header">
     <div id="gameover" class="pure-u-1">
-      GAME OVER
+      <p id="gomessage">GAME OVER</p>
+      <p id="goexplanation">operator '&' is invalid on type float</p>
+      <div class="scorer">
+        <input id="scorername" type="text" name="scorer" value="">
+      </div>
     </div>
   </div>
   <div class="pure-g header">
