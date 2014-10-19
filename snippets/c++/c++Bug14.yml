@@ -1,0 +1,2 @@
+explanation: "pmovie" is a pointer to an object and not the object itself, therefore it needs the arrow operator "->" in order to dereference an object
+bug_lines: '18,20'
