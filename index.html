@@ -78,38 +78,8 @@
       <br />
       <table>
         <tbody>
-        <tr>
-          <td>
-          int main(){
-          </td>
-        </tr>
-        <tr>
-          <td>
-          &nbsp;&nbsp;int N=20;
-          </td>
-        </tr>
-        <tr>
-          <td>
-          &nbsp;&nbsp;string filename;
-          </td>
-        </tr>
-        <tr>
-          <td>
-          &nbsp;&nbsp;
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-          &nbsp;&nbsp;return filename;
-          </td>
-        </tr>
-
-        <tr>
-          <td>
-          }
-          </td>
-        </tr>
+       <tr><td>#include&nbsp;&lt;iostream&gt;</td></tr><tr><td>#include&nbsp;&lt;string&gt;</td></tr><tr><td></td></tr><tr><td>using&nbsp;namespace&nbsp;std;</td></tr><tr><td>int&nbsp;main(int&nbsp;argc,&nbsp;char&nbsp;*argv[])&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;l=1;&nbsp;&#x2F;&#x2F;longitud&nbsp;de&nbsp;palo;</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;n;&#x2F;&#x2F;numero&nbsp;de&nbsp;cortes</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;ci[1000];&nbsp;&#x2F;&#x2F;donde&nbsp;hacer&nbsp;los&nbsp;cortes</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;suma[1000];</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;wow[1000];</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;temp;</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;min[1000];</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;menor&nbsp;=1000000;</td></tr><tr><td>&nbsp;&nbsp;int&nbsp;a[1000][1000];</td></tr><tr><td>&nbsp;&nbsp;while&nbsp;(true)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;cin&nbsp;&gt;&gt;&nbsp;l&nbsp;&gt;&gt;&nbsp;n;</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(l&nbsp;==&nbsp;0)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;break;</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&#x2F;&#x2F;cin&nbsp;&gt;&gt;&nbsp;ci[0];</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;&nbsp;n;&nbsp;i++)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;cin&nbsp;&gt;&gt;&nbsp;ci[i+1];</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&#x2F;&#x2F;termina&nbsp;input</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&#x2F;&#x2F;llena&nbsp;max&nbsp;TODO</td></tr><tr>
+       <td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;=&nbsp;n+10;&nbsp;i++)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;j&nbsp;=&nbsp;0;&nbsp;j&nbsp;&lt;=n+10;&nbsp;j++)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][j]=99999;</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ci[0]=0;</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;ci[n+1]=l;</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&#x2F;&#x2F;llena&nbsp;primera&nbsp;digonal</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;=&nbsp;n+1;&nbsp;i++)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][i]=0;</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][i+1]&nbsp;=&nbsp;0;</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][i+2]=ci[i+2]-ci[i];</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;k&nbsp;=&nbsp;3;&nbsp;k&nbsp;&lt;=&nbsp;n+1;&nbsp;k++)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;i&nbsp;=&nbsp;0;&nbsp;i&nbsp;&lt;=&nbsp;n+1;&nbsp;i++)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(int&nbsp;j=i+1;&nbsp;j&lt;=i+k-1;&nbsp;j++)&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if(&nbsp;a[i][i+k]&nbsp;&gt;&nbsp;(a[i][j]&nbsp;+&nbsp;a[j][i+k]&nbsp;+&nbsp;ci[i+k]&nbsp;-&nbsp;ci[i]))&nbsp;{</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a[i][i+k]&nbsp;=&nbsp;a[i][j]&nbsp;+&nbsp;a[j][i+k]&nbsp;+&nbsp;ci[i+k]&nbsp;-&nbsp;ci[i];</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;}</td></tr><tr><td>&nbsp;&nbsp;&nbsp;&nbsp;cout&nbsp;&lt;&lt;&nbsp;&quot;El&nbsp;corte&nbsp;minimo&nbsp;es&nbsp;&quot;&nbsp;&lt;&lt;&nbsp;a[0][n+1]&nbsp;&lt;&lt;&nbsp;&quot;.&quot;&nbsp;&lt;&lt;&nbsp;endl;</td></tr><tr><td>&nbsp;&nbsp;}</td></tr><tr><td>}</td></tr> 
         </tbody>
       </table>
     </div>
