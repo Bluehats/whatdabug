@@ -7,7 +7,6 @@ var rounds;
 window.onload = function(){
   if(window.location.search.match(/restart=true/) !== null){
     remove_instructions();
-    init_game();
   }
 };
 
@@ -15,11 +14,12 @@ function init_game(){
   streak = 0;
   time = 10;
   loop = window.setInterval(gameloop, 1000);
+  next_round();
 }
 
 function restart(){
   window.location.search += '&restart=true';
-}
+} 
 
 function lineClickHandlers(){
   var rows = document.getElementsByTagName("tr");

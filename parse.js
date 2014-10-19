@@ -10,7 +10,7 @@ query.find({
   success: function(bugs)
   {
     rounds = bugs;
-    next_round();
+    init_game();
   },
   error: function(error)
   {
