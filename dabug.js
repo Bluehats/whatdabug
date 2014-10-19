@@ -111,7 +111,7 @@ function next_round(){
   currentBug = rounds[random];
   if (rounds.length === 0){
     //alert('You have finished all bugs for this language, please contribute more at github.com/bluehats/whatdabug');
-    location.reload();
+    looseGame();
   }
   document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
   rounds.splice(random, 1);
