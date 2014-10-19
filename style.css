@@ -4,10 +4,28 @@ html, button, input, select, textarea,
     font-family: monospace;
 }
 body{
-  background: none repeat scroll 0% 0% #000;
+  background: none repeat scroll 0 0 #222;
   color: #0F0;
   font-family: monospace;
   font-size: 1.4em;
+}
+table {
+  counter-reset: rowNumber;
+}
+
+table tr {
+  counter-increment: rowNumber;
+}
+
+table tr td:first-child::before {
+  content: counter(rowNumber);
+  min-width: 1em;
+  margin-right: 0.5em;
+}
+.pure-button{
+  color: #fff;
+  background-color: #222;
+  font-size: 128%;
 }
 #whatdalogo{
   font-size: 1.5em;
@@ -20,7 +38,6 @@ body{
 }
 #whatdatimep{
   padding-right: 15px;
-
 }
 #whatdastreak{
   font-size: 1.5em;
@@ -30,7 +47,7 @@ body{
 #whatdastreakp{
   padding-right: 15px;
 }
-#gameover{
+#gameover, #instructions{
   opacity:    0.8;
   background: #0F0;
   color:      black;
@@ -43,11 +60,14 @@ body{
   text-align:center;
   display: none;
 }
-#gameover #gomessage{
+#instructions{
+  display: block;
+}
+.message{
   font-size:  4em;
   font-weight: bold;
 }
-#gameover #goexplanation{
+.explanation{
   font-size:  1em;
   font-weight: bold;
   font-style: italic;

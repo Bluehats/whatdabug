@@ -4,10 +4,6 @@ var loop = "";
 var currentBug;
 var rounds;
 
-window.onload = function(){
-  init_game();
-};
-
 function init_game(){
   streak = 0;
   time = 10;
@@ -27,6 +23,11 @@ function lineClickHandlers()
       });
     })(i);
   }
+}
+
+function remove_instructions(){
+  var instructions = document.getElementById('instructions');
+  instructions.setAttribute("style", "display: none");
 }
 
 function fix()

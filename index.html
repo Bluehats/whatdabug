@@ -16,9 +16,15 @@
 </head>
 <body>
   <div class="pure-g header">
+    <div id="instructions" class="pure-u-1">
+      <p class="message">INSTRUCTIONS</p>
+      <p class="explanation">WhatdaBug? Click the line where the bug is.</p>
+      <p class="explanation">For every bug you catch you get 10 more seconds, every miss is 5 seconds less.</p>
+      <a href="#" onclick="init_game();remove_instructions();" class="pure-button">START</a>
+    </div>
     <div id="gameover" class="pure-u-1">
-      <p id="gomessage">GAME OVER</p>
-      <p id="goexplanation">operator '&' is invalid on type float</p>
+      <p class="message">GAME OVER</p>
+      <p class="explanation">operator '&' is invalid on type float</p>
       <div class="scorer">
         <input id="scorername" type="text" name="scorer" value="">
       </div>
