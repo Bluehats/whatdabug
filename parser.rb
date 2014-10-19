@@ -9,7 +9,6 @@ headers['Content-Type'] = 'application/json'
 headers['accept'] = 'json'
 url = 'https://api.parse.com/1/classes/Bug'
 
-(0..1000).each do
 languages = Dir.entries('snippets')[2..-1]
 languages.each do |language|
   files = Dir.entries("snippets/#{language}")[2..-1]
@@ -27,5 +26,4 @@ languages.each do |language|
     response = RestClient.post(url, object.to_json, headers)
 
   end
-end
 end
