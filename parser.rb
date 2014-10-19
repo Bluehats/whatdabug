@@ -16,11 +16,13 @@ def process_html(html)
   end.reduce(:+).gsub(' ', '&nbsp;').gsub('\t', '&nbsp;&nbsp;')
 end
 
-languages = Dir.entries('snippets').delete_if {|s| s.match(/^\..*/)}
+languages = Dir.entries('snippets').delete_if { |s| s.match(/^\..*/) }
 
 languages.each do |language|
-  files = Dir.entries("snippets/#{language}").delete_if {|s| s.match(/^\..*/)}
+  puts "Parsing language #{language} "
+  files = Dir.entries("snippets/#{language}").delete_if { |s| s.match(/^\..*/) }
   files.each_slice(2) do |file_array|
+    print '..'
     object = {}
     if file_array[0].match(/yml/)
       object = (YAML.load(File.read("snippets/#{language}/#{file_array[0]}")))
@@ -30,6 +32,7 @@ languages.each do |language|
       object['code'] = process_html(File.read("snippets/#{language}/#{file_array[0]}"))
     end
     object['language'] = language
-    response = RestClient.post(url, object.to_json, headers)
+    RestClient.post(url, object.to_json, headers)
   end
+  puts ''
 end
