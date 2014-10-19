@@ -80,7 +80,7 @@ function drawLoose(){
   var message = document.getElementById("goexplanation");
   
   overlay.setAttribute("style", "display: block");
-  message.innerHTML = currentBug.get("explanation");
+  message.innerHTML = "Lines " + currentBug.get("bug_lines") + ": " + currentBug.get("explanation");
   
   window.setTimeout(function ()
    {
