@@ -4,10 +4,21 @@ var loop = "";
 var currentBug;
 var rounds;
 
+window.onload = function(){
+  if(window.location.search.match(/restart=true/) !== null){
+    remove_instructions();
+    init_game();
+  }
+};
+
 function init_game(){
   streak = 0;
   time = 10;
   loop = window.setInterval(gameloop, 1000);
+}
+
+function restart(){
+  window.location.search += '&restart=true';
 }
 
 function lineClickHandlers(){
@@ -116,6 +127,7 @@ function send_score(){
     success: function(newScore)
     {
       console.log("saved!!!");
+      restart();
     },
     error: function(newScore, error)
     {
