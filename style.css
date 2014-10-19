@@ -3,6 +3,16 @@ html, button, input, select, textarea,
     /* Set your content font stack here: */
     font-family: monospace;
 }
+#language{
+  display: inline-block;
+  width: 100px;
+  height: 50px;
+  overflow:hidden;
+  border: 1px solid #222;
+  font-size: 20px;
+  background-color: #000;
+  color: #fff;
+}
 body{
   background: none repeat scroll 0 0 #222;
   color: #0F0;

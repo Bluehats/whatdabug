@@ -5,17 +5,35 @@ var currentBug;
 var rounds;
 
 window.onload = function(){
-  if(window.location.search.match(/restart=true/) !== null){
-    remove_instructions();
-    init_game();
-  }
+  // if(window.location.search.match(/restart=true/) !== null){
+    // remove_instructions();
+    // init_game('c++');
+  // }
 };
 
-function init_game(){
-  streak = 0;
-  time = 10;
-  loop = window.setInterval(gameloop, 1000);
-  next_round();
+function start() {
+  var language = document.getElementById('language').value;
+  remove_instructions();
+  init_game(language);
+}
+
+function init_game(choosenLanguage){
+  query.equalTo("language", choosenLanguage);
+  //query.limit(1); limit number of bugs on array
+  query.find({
+    success: function(bugs)
+    {
+      rounds = bugs;
+      streak = 0;
+      time = 10;
+      loop = window.setInterval(gameloop, 1000);
+      next_round();
+    },
+    error: function(error)
+    {
+      console.log(error);
+    }
+  });
 }
 
 function restart(){
@@ -53,10 +71,10 @@ function checkAnswer(rowNumber){
   bugLines = currentBug.get('bug_lines').split(',');
   var rows = document.getElementsByTagName("tr");
   if (bugLines.indexOf(rowNumber + '') >= 0 ) {
-    next_round();
     time += 10;
     streak += 1;
     updateDOMStreak();
+    next_round();
   }else{
     rows[rowNumber-1].setAttribute("id", "wrong");
     time -= 5;
@@ -72,7 +90,8 @@ function gameloop(){
     looseGame();
   }
   var rows = document.getElementById("wrong");
-  rows.removeAttribute("id");
+  if( rows !== null )
+    rows.removeAttribute("id");
 }
 
 function updateDOMTime(){
@@ -90,6 +109,18 @@ function looseGame(){
   time = 0;
   updateDOMTime();
   drawLoose();
+}
+function endGame(){
+  window.clearInterval(loop);
+  time = 0;
+  updateDOMTime();
+  var overlay = document.getElementById("gameover");
+
+  overlay.setAttribute("style", "display: block");
+  window.setTimeout(function ()
+   {
+       document.getElementById('scorername').focus();
+   }, 0);
 }
 
 function drawLoose(){
@@ -111,11 +142,12 @@ function next_round(){
   currentBug = rounds[random];
   if (rounds.length === 0){
     //alert('You have finished all bugs for this language, please contribute more at github.com/bluehats/whatdabug');
-    looseGame();
+    endGame();
+  }else{
+    document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
+    rounds.splice(random, 1);
+    lineClickHandlers();
   }
-  document.getElementsByTagName('tbody')[0].innerHTML = currentBug.get("code");
-  rounds.splice(random, 1);
-  lineClickHandlers();
 }
 
 function send_score(){

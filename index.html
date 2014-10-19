@@ -22,7 +22,11 @@
         WhatDaBug? Click the line where the bug is.
         For every bug you catch you get 10 more seconds, for every one you miss you get 5 seconds less.
       </p>
-      <a href="#" onclick="init_game();remove_instructions();" class="pure-button">START</a>
+      <select id="language" name="language" style="display: inline-block;">
+        <option>c++</option>
+        <option>java</option>
+      </select>
+      <a href="#" onclick="start();" class="pure-button">START</a>
     </div>
     <div id="gameover" class="pure-u-1">
       <p class="message">GAME OVER</p>
