@@ -1,2 +1,2 @@
-explanation: Every case in the switch is missing a break, which causes an undesired result if case 1 is selected
-bug_lines: '11,14'
+explanation: Variable Y was defined in another scope.
+bug_lines: '16'

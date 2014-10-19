@@ -1,2 +1,2 @@
-explanation: Variable scoping, once it's declared inside the main, the variable 'x' has a new memory address.
-bug_lines: '7'
+explanation: The "message" function will always return msg1. It has unreachable code.
+bug_lines: '17'

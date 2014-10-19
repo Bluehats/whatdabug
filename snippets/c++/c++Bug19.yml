@@ -1,0 +1,2 @@
+explanation: The "<<" operand has higher precedence than the ternary operator "? :".
+bug_lines: '6'

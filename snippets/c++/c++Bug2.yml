@@ -1,2 +1,2 @@
-explanation: Caused by a stray ";" on line 9. This is an accidental bug, which are often caused by stray characters.
+explanation: The for loop has a empty body because of a stray ";".
 bug_lines: '9'

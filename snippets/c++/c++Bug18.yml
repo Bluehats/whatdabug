@@ -1,2 +1,2 @@
-explanation: The variable 'answer' is a char so the second conditional in the do-while loop should be single quoted 'y'.
+explanation: The variable 'answer' is a char so the second comparison in the do-while loop should be single quoted 'y'.
 bug_lines: '17'

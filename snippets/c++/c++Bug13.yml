@@ -1,2 +1,2 @@
-explanation: Returns an integer, losing the value of the real average when a double is asked
+explanation: While it does compile. It loses precision by returning an integer instead of a double.
 bug_lines: '10'

@@ -2,8 +2,7 @@
 
 using namespace std;
 int main(int argc, char *argv[]) {
-
-   double number = 0;
+  double number = 0;
 	char letter;
 	char answer;
 	
@@ -14,7 +13,7 @@ int main(int argc, char *argv[]) {
 		cin>>letter;
 		cout<<"Want to do it again??? (y/n)"<<endl;
 		cin>>answer;
-	}wh	ile(answer == 'Y' || answer == "y");
+	}while(answer == 'Y' || answer == "y");
 	
 	cout<<"THE END!"<<endl;
 	return 0;

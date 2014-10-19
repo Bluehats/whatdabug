@@ -4,14 +4,11 @@ using namespace std;
 
 int main()
 {
-    int y = 0;
-    do
-    {
-        int x = 0;
-        y++;
-        x += y;
-    }while (x<10);
+  print_message();
+}
 
-    cout <<x;
-    return 0;
+void print_message(){
+  string message = "Hello world";
+  cout << message;
+  return message;
 }

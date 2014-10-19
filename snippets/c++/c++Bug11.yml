@@ -1,2 +1,2 @@
-explanation: the variable 'x' must be declared outside the loop Do
-bug_lines: '10'
+explanation: Returning a string in a void function
+bug_lines: '13'
