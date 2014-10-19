@@ -37,7 +37,7 @@ function init_game(choosenLanguage){
 }
 
 function restart(){
-  window.location.search = '&restart=true';
+  window.location.search += '&restart=true';
 }
 
 function lineClickHandlers(){
