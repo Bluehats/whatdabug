@@ -1,2 +1,2 @@
-explanation: ' The array "arr" is out of bounds. It was created to hold 5 integers and holds 6 in the program'
+explanation: The array "arr" is out of bounds. It was created to hold 5 integers and holds 6 in the program
 bug_lines: '7'

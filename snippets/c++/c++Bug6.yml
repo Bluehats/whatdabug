@@ -1,2 +1,2 @@
-explanation: 'operator '&' is invalid on type float'
+explanation: operator '&' is invalid on type float
 bug_lines: '10'

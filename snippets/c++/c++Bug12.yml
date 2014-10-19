@@ -1,2 +1,2 @@
-explanation: 'Variable scoping, once it's declared inside the main, the variable 'x' has a new memory address.'
+explanation: Variable scoping, once it's declared inside the main, the variable 'x' has a new memory address.
 bug_lines: '7'

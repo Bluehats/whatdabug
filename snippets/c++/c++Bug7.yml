@@ -1,2 +1,2 @@
-explanation: 'Cannot display a string with "cout" without the use of "namespace std;"'
+explanation: Cannot display a string with "cout" without the use of "namespace std;"
 bug_lines: '1'

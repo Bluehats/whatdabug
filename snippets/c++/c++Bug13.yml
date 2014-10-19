@@ -1,2 +1,2 @@
-explanation: 'Returns an integer, losing the value of the real average when a double is asked'
+explanation: Returns an integer, losing the value of the real average when a double is asked
 bug_lines: '10'
