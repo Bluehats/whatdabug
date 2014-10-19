@@ -21,3 +21,7 @@ td, th {
 a {
 	color: rgb(4, 24, 188)
 }
+.pure-button{
+	text-align:center;
+	margin:0 auto;
+}
