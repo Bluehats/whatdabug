@@ -1,2 +1,2 @@
 explanation: The loop is accessing 6 elements and the Array only has 5 elements, java.lang.ArrayIndexOutOfBoundsException
-bug_lines: '4'
+bug_lines: '5'
