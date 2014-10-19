@@ -34,6 +34,8 @@ function checkAnswer(rowNumber){
   if (bugLines.indexOf(rowNumber + '') >= 0 ) {
     next_round();
     time += 10;
+    streak += 1;
+    updateDOMStreak();
   }else{
     time -= 5;
   }
