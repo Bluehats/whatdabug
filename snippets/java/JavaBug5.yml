@@ -1,0 +1,2 @@
+explanation: Tried to access static variable from non-static context 
+bug_lines: '7'
